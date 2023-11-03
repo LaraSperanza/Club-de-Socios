@@ -1,0 +1,24 @@
+.dashboard-page{
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.dashboard-header{
+  background-color: #47b984;
+}
+
+.dashboard-link{
+  background-color: #47b984;
+  color: white;
+}
+
+.list-item:hover{
+  background-color: #47b984;
+  color: white;
+}
+
+.list-item:hover i,
+.list-item:hover a {
+  color: white;
+  text-decoration: white;
+}
