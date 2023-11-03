@@ -14,3 +14,12 @@
 .login-input{
     outline: none;
 }
+
+@media (max-width: 992px) {
+    .left-container{
+        height: 10%;
+    }
+    .right-container{
+        height: 90%;
+    }
+  }
