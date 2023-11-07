@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Club Ascensión</title>
-    <link rel="stylesheet" th:href="@{/css/app.css}">
-    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}"> <!--RUTA PARA LOS CSS GENERALES PARA TODAS LAS PAGINAS-->
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}"> <!--si hacen otra página, creen en la carpeta css otro archivo css con el nombre de la página-->
+    <!--el link y el script de abajo son de bootstrap... tampoco hay que sacarlos ni modificarlos-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/94b10fad32.js" crossorigin="anonymous"></script>
   </head>
@@ -85,7 +86,8 @@
     <div class="d-flex d-lg-none justify-contnet-center border-0 border-end bg-body-secondary" data-bs-toggle="offcanvas" data-bs-target="#side-menu">
       <i class="fas fa-chevron-right top-50 border-end align-self-center"></i>
     </div>
-dashboard
+    dashboard 
+    <!--ESTE ES EL CONTENEDOR QUE TIENEN QUE MODIFICAR SI HACEN OTRA PAGINA-->
   </div>
   <script type="text/javascript" th:src="@{/js/menuResponsive.js}"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
