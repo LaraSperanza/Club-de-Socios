@@ -18,7 +18,16 @@
 }
 
 .list-item:hover i,
+.list-item:hover span,
 .list-item:hover a {
   color: white;
   text-decoration: white;
+}
+
+.accordion {
+--bs-accordion-button-active-bg: #47b984;
+}
+
+.side-nav{
+  min-width: 15rem;
 }
