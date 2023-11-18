@@ -5,8 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.unnoba.ClubDeSocios.model.User;
 
-
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
-    
+    User findeByEmail(String email);
 }

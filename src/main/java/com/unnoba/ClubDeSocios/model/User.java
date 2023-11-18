@@ -1,5 +1,13 @@
 package com.unnoba.ClubDeSocios.model;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,9 +19,9 @@ import lombok.Setter;
 
 @Entity
 @Table(name="users")
-@Getter //Getter y Setter nos ahorra escribir éstos.
+@Getter
 @Setter
-@AllArgsConstructor //Aplica un construtor con todos los atributos.
+@AllArgsConstructor
 public class User{
 
     @Id
@@ -23,5 +31,5 @@ public class User{
     private String name;
     private String surname;
     private String password;
-   
+    private String role;
 }
