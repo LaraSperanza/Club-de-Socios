@@ -14,10 +14,10 @@ import com.unnoba.ClubDeSocios.model.User;
 public class UserController {
 
     @Autowired
-    private UserService UserService;
+    private UserService userService;
 
     @GetMapping ("/")
-    String Login(){
+    public String Login(){
         return "login";
     }
 
@@ -28,7 +28,7 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerUser(@ModelAttribute("user") User user, Model model){
-        UserService.create(user);
+        userService.create(user);
         model.addAttribute("message", "Registro exitoso.");
         return "register";
     }

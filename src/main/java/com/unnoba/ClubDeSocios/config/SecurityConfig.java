@@ -10,16 +10,17 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
 import com.unnoba.ClubDeSocios.services.CustomUserDetailsService;
+
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
   @Autowired
-  CustomUserDetailsService customUserDetailsService;
-  
+  private CustomUserDetailsService customUserDetailsService;
+
+
   @Bean
   public static PasswordEncoder passwordEncoder(){
     return new BCryptPasswordEncoder();
@@ -28,7 +29,7 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
     http.csrf(c -> c.disable())
-    .authorizeHttpRequests(request->request.requestMatchers("/resources/**","/css/**", "/images/**").permitAll()
+    .authorizeHttpRequests(request->request.requestMatchers("/resources/**","/css/**").permitAll()
     .requestMatchers("/").permitAll()
     .requestMatchers("/register").permitAll()
     .anyRequest().authenticated()
@@ -37,7 +38,7 @@ public class SecurityConfig {
     .defaultSuccessUrl("/dashboard").permitAll())
 
     .logout(form -> form.invalidateHttpSession(true).clearAuthentication(true)
-    .logoutRequestMatcher(new AntPathRequestMatcher("/")).logoutSuccessUrl("/?logout").permitAll());
+    .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/?logout").permitAll());
     return http.build();
   }
 
