@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <title>Club Ascensión</title>
     <link rel="stylesheet" th:href="@{/css/app.css}"> <!--RUTA PARA LOS CSS GENERALES PARA TODAS LAS PAGINAS-->
-    <link rel="stylesheet" th:href="@{/css/dashboard.css}"> <!--si hacen otra página, creen en la carpeta css otro archivo css con el nombre de la página-->
+    <link rel="stylesheet" th:href="@{/css/newMember.css}"> <!--si hacen otra página, creen en la carpeta css otro archivo css con el nombre de la página-->
     <!--el link y el script de abajo son de bootstrap... tampoco hay que sacarlos ni modificarlos-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/94b10fad32.js" crossorigin="anonymous"></script>
   </head>
-<body class="dashboard-page d-flex flex-column overflow-hidden">
+<body class="newMember-page d-flex flex-column overflow-hidden">
   <header class="light-green w-100">
     <nav class="d-flex justify-content-between py-2">
       <div>
@@ -28,18 +28,18 @@
       <i class="d-lg-none fas fa-times position-absolute light-grey-text top-0 end-0 mt-2 me-2" data-bs-dismiss="offcanvas" data-bs-target="#side-menu"></i>
       <p class="fw-semibold fs-5 text-secondary ps-2 pt-2">Menu</p>
       <ul class="list-group d-flex w-100 flex-column">
-        <li class="dashboard-link list-item ps-3 cursor-pointer py-1 d-flex align-items-center">
-          <i class="dahsboard-link fas fa-tachometer-alt fs-5"></i>
-          <a href="/dashboard" class="dashboard-link fw-bold fs-5 link-underline link-underline-opacity-0 d-flex flex-grow-1 ms-2">Dashboard</a>
+        <li class="list-item ps-3 cursor-pointer py-1 d-flex align-items-center">
+          <i class="fas fa-tachometer-alt fs-5 light-grey-text"></i>
+          <a href="/dashboard" class="fw-bold fs-5 link-underline link-underline-opacity-0 d-flex flex-grow-1 ms-2 light-grey-text">Dashboard</a>
         </li>
 
         <div class="accordion" id="accordionMember">
-            <li class="ps-3 mt-3 list-item cursor-pointer py-1 d-flex align-items-center justify-content-center"  data-bs-toggle="collapse" data-bs-target="#collapseMember" aria-expanded="true" aria-controls="collapseOne">
-              <i class="list-item fas fa-users fs-5 light-grey-text"></i>
-                <div class="list-item fw-bold fs-5 light-grey-text d-flex flex-grow-1 justify-content-between align-items-center ms-2">Socios<i class="fas fa-chevron-down me-3"></i> </div>
+            <li class="newMember-link ps-3 mt-3 list-item cursor-pointer py-1 d-flex align-items-center justify-content-center"  data-bs-toggle="collapse" data-bs-target="#collapseMember" aria-expanded="true" aria-controls="collapseOne">
+              <i class="newMember-link list-item fas fa-users fs-5 light-grey-text"></i>
+                <div class="newMember-link list-item fw-bold fs-5 light-grey-text d-flex flex-grow-1 justify-content-between align-items-center ms-2">Socios<i class="newMember-link fas fa-chevron-down me-3"></i> </div>
             </li>
           <div id="collapseMember" class="accordion-collapse collapse" data-bs-parent="#accordionMember">
-            <div class="accordion-body p-0">
+            <div class="accordion-body p-0 ">
               <li class="ps-5 list-item cursor-pointer decoration-none py-1">
                 <a href="/members/new" class="d-flex list-item fw-medium fs-6 light-grey-text link-underline link-underline-opacity-0">Socio individual</a>
               </li>
@@ -95,9 +95,55 @@
       <div class="d-flex d-lg-none justify-contnet-center border-0 border-end bg-body-secondary position-absolute h-100" data-bs-toggle="offcanvas" data-bs-target="#side-menu">
         <i class="fas fa-chevron-right top-50 border-end align-self-center"></i>
       </div>
-      <h3 class="fs-4 fw-bold text-secondary ms-3 mt-4">En construccion</h3>
+      <h3 class="fs-4 fw-bold text-secondary ms-3 mt-4">Alta de socio</h3>
       <div class="d-flex flex-grow-1 justify-content-center align-items-center">
-       
+        <form class="row row-cols-2 align-slef-center bg-white align-self-center w-50 border border-secondary p-3">
+          <div class="w-100 mb-3 p-0">
+              <span class="fw-medium text-secondary fs-5">Datos</span>
+          </div>
+          <div class="mb-3 col">
+            <label for="number" class="form-label text-light-emphasis">Número</label>
+            <input type="number" class="form-control" id="number">
+          </div>
+          <div class="mb-3 col">
+            <label for="dni" class="form-label text-light-emphasis">Documento</label>
+            <input type="text" class="form-control" id="dni">
+          </div>
+          <div class="mb-3 col">
+            <label for="name" class="form-label text-light-emphasis">Nombre</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="mb-3 col">
+            <label for="birth" class="form-label text-light-emphasis">F. Nacimiento</label>
+            <input type="date" class="form-control" id="birth">
+          </div>
+          <div class="mb-3 col">
+            <label for="address" class="form-label text-light-emphasis">Dirección</label>
+            <input type="text" class="form-control" id="address">
+          </div>
+          <div class="mb-3 col">
+            <label for="locality" class="form-label text-light-emphasis">Localidad</label>
+            <input type="text" class="form-control" id="locality">
+          </div>
+          <div class="mb-3 col">
+            <label for="tel" class="form-label text-light-emphasis">Telefono</label>
+            <input type="text" class="form-control" id="tel">
+          </div>
+          <div class="mb-3 col">
+            <label for="entry_date" class="form-label text-light-emphasis">F. Alta</label>
+            <input type="date" class="form-control" id="entry_date">
+          </div>
+          <div class="mb-3 col">
+            <label for="accepted" class="form-label text-light-emphasis">Aceptado</label>
+            <select class="form-select" aria-label="Default select example" id="accepted">
+              <option value="true" selected>Si</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+          <div class="col mb-3 d-flex align-items-end">
+            <button type="button" class="btn btn-primary w-100 fw-semibold">Agregar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
