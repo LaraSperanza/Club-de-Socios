@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
     <title>Club Ascensión</title>
@@ -17,9 +18,9 @@
           <img class="col-1 ms-2" src="../assets/images/icon-club.png"/>
         </a>
       </div>
-      <div class="d-flex justify-content-center align-items-center">
-        <a href="/" class="border-0 bg-transparent text-white fw-semibold link-underline link-underline-opacity-0 fs-6 me-2">Salir</a>
-      </div>
+      <form th:action="@{/logout}" method="post" class="d-flex justify-content-center align-items-center">
+        <input class="border-0 bg-transparent text-white fw-semibold link-underline link-underline-opacity-0 fs-6 me-2" type="submit" value="Salir">
+      </form>
     </nav>
   </header>
   <div class="d-flex flex-grow-1 h-100">
