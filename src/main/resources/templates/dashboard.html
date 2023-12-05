@@ -36,7 +36,7 @@
         <div class="accordion" id="accordionMember">
             <li class="ps-3 mt-3 list-item cursor-pointer py-1 d-flex align-items-center justify-content-center"  data-bs-toggle="collapse" data-bs-target="#collapseMember" aria-expanded="true" aria-controls="collapseOne">
               <i class="list-item fas fa-users fs-5 light-grey-text"></i>
-                <div class="list-item fw-bold fs-5 light-grey-text d-flex flex-grow-1 justify-content-between align-items-center ms-2">Socios<i class="fas fa-chevron-down me-3"></i> </div>
+              <div class="list-item fw-bold fs-5 light-grey-text d-flex flex-grow-1 justify-content-between align-items-center ms-2">Socios<i class="fas fa-chevron-down me-3"></i> </div>
             </li>
           <div id="collapseMember" class="accordion-collapse collapse" data-bs-parent="#accordionMember">
             <div class="accordion-body p-0">
@@ -95,9 +95,71 @@
       <div class="d-flex d-lg-none justify-contnet-center border-0 border-end bg-body-secondary position-absolute h-100" data-bs-toggle="offcanvas" data-bs-target="#side-menu">
         <i class="fas fa-chevron-right top-50 border-end align-self-center"></i>
       </div>
-      <h3 class="fs-4 fw-bold text-secondary ms-3 mt-4">En construccion</h3>
-      <div class="d-flex flex-grow-1 justify-content-center align-items-center">
-       
+      <div class="d-flex flex-column flex-grow-1">
+        <div class="d-flex flex-column bg-white p-2 rounded align-self-start ms-3 mt-3 shadow-sm">
+          <div class="d-flex align-items-center">
+            <span class="fs-4 fw-bold text-secondary me-3">Socios totales</span>
+            <i class="fas fa-users fs-5 light-grey-text mx-3"></i>
+          </div>
+          <div>
+            <span class="fs-3 fw-bold">1000</span>
+          </div>
+          <div class="d-flex justify-content-end">
+            <a href="/members/new" class="btn btn-sm btn-success fw-semibold me-2"><i class="fas fa-plus text-white me-2"></i>Agregar</a>
+          </div>
+        </div>
+        <div class="table-container d-flex flex-column bg-white mx-3 mt-4 rounded overflow-hidden shadow">
+          <div class="p-2">
+            <h3 class="fw-bold fs-4 text-secondary">Ultimos pagos</h3>
+          </div>
+          <div class="overflow-y-auto">
+            <table class="dashboard-table table table-striped table-bordered table-responsive position-relative">
+              <thead>
+                <tr>
+                  <th scope="col">N° socio</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Teléfono</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Hernan</td>
+                  <td>Rubio</td>
+                  <td>2477111111</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Ignacio</td>
+                  <td>Rubio</td>
+                  <td>2477111111</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Hernan</td>
+                  <td>Rubio</td>
+                  <td>2477111111</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Ignacio</td>
+                  <td>Rubio</td>
+                  <td>2477111111</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Ignacio</td>
+                  <td>Rubio</td>
+                  <td>2477111111</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-end py-2">
+            <button class="btn btn-sm btn-success align-self-end me-3 fw-semibold">Ver todos</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

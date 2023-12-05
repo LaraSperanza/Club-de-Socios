@@ -31,3 +31,8 @@
 .side-nav{
   min-width: 15rem;
 }
+
+.table-container{
+  max-height: 65%;
+
+}
