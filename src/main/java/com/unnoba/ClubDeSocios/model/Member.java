@@ -2,6 +2,9 @@ package com.unnoba.ClubDeSocios.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,13 +24,24 @@ public class Member { //POSIBLEMENTE FALTEN AGREGAR ATRIBUTOS
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id_member;
+
   private String member_name;
+  
   private String member_surname;
-  private String identity_card; //poner con ck. Lo puse como String porque nos va a permitir usar el "LIKE" en la bd para poder filtrar. Un Integer no.
+  
+  private String identity_card;
+  
+  @DateTimeFormat(pattern = "dd-mm-yyyy")
   private Date birthdate;
+  
   private String phone;
+  
   private String email;
+  
+  @DateTimeFormat(pattern = "dd-mm-yyyy")
   private Date registration_date;
+  
   private Boolean life_member;
+  
   private Long family_group; //Agregar join a la tabla.
 }

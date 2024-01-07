@@ -96,14 +96,10 @@
         <i class="fas fa-chevron-right top-50 border-end align-self-center"></i>
       </div>
       <h3 class="fs-4 fw-bold text-secondary ms-3 mt-4">Alta de socio</h3>
-      <div class="d-flex flex-grow-1 justify-content-center align-items-center">
-        <form class="row row-cols-3 align-slef-center bg-white align-self-center w-75 border border-secondary p-2 rounded">
+      <div class="d-flex flex-grow-1 justify-content-center">
+        <form th:action="@{/members/new}" method="post" class="row row-cols-3 align-slef-center bg-white align-self-start mt-2 w-75 border border-secondary p-2 rounded">
           <div class="w-100 mb-2 p-0">
               <span class="fw-medium text-secondary fs-5">Datos</span>
-          </div>
-          <div class="mb-2 col">
-            <label for="number" class="form-label text-light-emphasis">N° Socio</label>
-            <input type="number" class="form-control border border-secondary" id="number" autofocus>
           </div>
           <div class="mb-2 col">
             <label for="entry_date" class="form-label text-light-emphasis">F. Alta</label>
@@ -170,7 +166,7 @@
           
           <div class="col my-1 d-flex justify-content-evenly w-100">
             <button type="reset" class="btn btn-sm btn-danger col-3 fw-semibold fs-6"><i class="fas fa-eraser text-white me-2"></i>Limpiar</button>
-            <button type="button" class="btn btn-sm btn-success col-3 fw-semibold fs-6"><i class="far fa-save text-wihte me-2"></i>Agregar</button>
+            <button type="submit" class="btn btn-sm btn-success col-3 fw-semibold fs-6"><i class="far fa-save text-wihte me-2"></i>Agregar</button>
           </div>
         </form>
       </div>
