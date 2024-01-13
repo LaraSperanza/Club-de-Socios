@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,17 +30,32 @@ public class Member { //POSIBLEMENTE FALTEN AGREGAR ATRIBUTOS
   
   private String identity_card;
   
-  @DateTimeFormat(pattern = "dd-mm-yyyy")
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   private Date birthdate;
   
   private String phone;
+
+  private String nacionality;
+
+  private String locality;
   
   private String email;
+
+  private String civil_status;
+
+  private String street;
+
+  private String number;
+
+  private String departament;
+
+  private String floor;
   
-  @DateTimeFormat(pattern = "dd-mm-yyyy")
-  private Date registration_date;
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  private Date entry_date;
   
   private Boolean life_member;
+
   
   private Long family_group; //Agregar join a la tabla.
 }

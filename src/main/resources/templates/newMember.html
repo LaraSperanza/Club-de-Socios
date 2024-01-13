@@ -95,39 +95,39 @@
       <div class="d-flex d-lg-none justify-contnet-center border-0 border-end bg-body-secondary position-absolute h-100" data-bs-toggle="offcanvas" data-bs-target="#side-menu">
         <i class="fas fa-chevron-right top-50 border-end align-self-center"></i>
       </div>
-      <h3 class="fs-4 fw-bold text-secondary ms-3 mt-4">Alta de socio</h3>
+      <h3 class="fs-4 fw-bold text-body-tertiary ms-3 mt-4">Alta de socio</h3>
       <div class="d-flex flex-grow-1 justify-content-center">
-        <form th:action="@{/members/new}" method="post" class="row row-cols-3 align-slef-center bg-white align-self-start mt-2 w-75 border border-secondary p-2 rounded">
+        <form th:action="@{/members/new}" th:object="${member}" method="post" class="row row-cols-3 align-slef-center bg-white align-self-start mt-2 w-75 shadow p-2 rounded">
           <div class="w-100 mb-2 p-0">
-              <span class="fw-medium text-secondary fs-5">Datos</span>
+              <span class="fw-medium text-body-tertiary fs-5">Datos</span>
           </div>
           <div class="mb-2 col">
             <label for="entry_date" class="form-label text-light-emphasis">F. Alta</label>
-            <input type="date" class="form-control border border-secondary" id="entry_date">
+            <input type="date" th:field="*{entry_date}" class="form-control border border-secondary" id="entry_date">
           </div>
           <div class="mb-2 col">
-            <label for="name" class="form-label text-light-emphasis">Nombre</label>
-            <input type="text" class="form-control border border-secondary" id="name">
+            <label for="member_name" class="form-label text-light-emphasis">Nombre</label>
+            <input type="text" th:field="*{member_name}" class="form-control border border-secondary" id="member_name">
           </div>
           <div class="mb-2 col">
-            <label for="surname" class="form-label text-light-emphasis">Apellido</label>
-            <input type="text" class="form-control border border-secondary" id="surname">
+            <label for="member_surname" class="form-label text-light-emphasis">Apellido</label>
+            <input type="text" th:field="*{member_surname}" class="form-control border border-secondary" id="member_surname">
           </div>
           <div class="mb-2 col">
             <label for="identity_card" class="form-label text-light-emphasis">Documento</label>
-            <input type="text" class="form-control border border-secondary" id="identity_card">
+            <input type="text" th:field="*{identity_card}" class="form-control border border-secondary" id="identity_card">
           </div>
           <div class="mb-2 col">
             <label for="birthdate" class="form-label text-light-emphasis">F. Nacimiento</label>
-            <input type="date" class="form-control border border-secondary" id="birthdate">
+            <input type="date" th:field="*{birthdate}" class="form-control border border-secondary" id="birthdate">
           </div>
           <div class="mb-2 col">
             <label for="nacionality" class="form-label text-light-emphasis">Nacionalidad</label>
-            <input type="text" class="form-control border border-secondary" id="nacionality">
+            <input type="text" th:field="*{nacionality}" class="form-control border border-secondary" id="nacionality">
           </div>
           <div class="mb-2 col">
             <label for="civi_status" class="form-label text-light-emphasis">Estado civil</label>
-            <select class="form-select border border-secondary" aria-label="Default select example" id="civil_status">
+            <select th:field="*{civil_status}" class="form-select border border-secondary" aria-label="Default select example" id="civil_status">
               <option value="single">Soltero/a</option>
               <option value="married">Casado/a</option>
               <option value="separated">Separado/a</option>
@@ -137,36 +137,35 @@
           </div>
           <div class="mb-2 col">
             <label for="locality" class="form-label text-light-emphasis">Localidad</label>
-            <input type="text" class="form-control border border-secondary" id="locality">
+            <input th:field="*{locality}" type="text" class="form-control border border-secondary" id="locality">
           </div>
           <div class="mb-2 col">
-            <label for="tel" class="form-label text-light-emphasis">Teléfono</label>
-            <input type="text" class="form-control border border-secondary" id="tel">
+            <label for="phone" class="form-label text-light-emphasis">Teléfono</label>
+            <input th:field="*{phone}" type="text" class="form-control border border-secondary" id="phone">
           </div>
           <div class="mb-2 col">
             <label for="email" class="form-label text-light-emphasis">Email</label>
-            <input type="email" class="form-control border border-secondary" id="email">
+            <input th:field="*{email}" type="email" class="form-control border border-secondary" id="email">
           </div>
           <div class="mb-2 col">
             <label for="street" class="form-label text-light-emphasis">Calle</label>
-            <input type="text" class="form-control border border-secondary" id="street">
+            <input th:field="*{street}" type="text" class="form-control border border-secondary" id="street">
           </div>
           <div class="mb-2 col">
             <label for="number" class="form-label text-light-emphasis">Altura</label>
-            <input type="number" class="form-control border border-secondary" id="number">
+            <input th:field="*{number}" type="number" class="form-control border border-secondary" id="number">
           </div>
           <div class="mb-2 col">
             <label for="departament" class="form-label text-light-emphasis">Departamento</label>
-            <input type="text" class="form-control border border-secondary" id="departament">
+            <input th:field="*{departament}" type="text" class="form-control border border-secondary" id="departament">
           </div>
           <div class="mb-2 col">
             <label for="floor" class="form-label text-light-emphasis">Piso</label>
-            <input type="number" class="form-control border border-secondary" id="floor">
+            <input th:field="*{floor}" type="number" class="form-control border border-secondary" id="floor">
           </div>
-          
-          <div class="col my-1 d-flex justify-content-evenly w-100">
-            <button type="reset" class="btn btn-sm btn-danger col-3 fw-semibold fs-6"><i class="fas fa-eraser text-white me-2"></i>Limpiar</button>
+          <div class="col my-3 d-flex justify-content-evenly w-100">
             <button type="submit" class="btn btn-sm btn-success col-3 fw-semibold fs-6"><i class="far fa-save text-wihte me-2"></i>Agregar</button>
+            <button type="reset" class="btn btn-sm btn-danger col-3 fw-semibold fs-6"><i class="fas fa-eraser text-white me-2"></i>Limpiar</button>
           </div>
         </form>
       </div>

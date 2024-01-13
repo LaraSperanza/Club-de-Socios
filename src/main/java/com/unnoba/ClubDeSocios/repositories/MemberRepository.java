@@ -10,5 +10,7 @@ import com.unnoba.ClubDeSocios.model.Member;
 public interface MemberRepository extends JpaRepository<Member, Long>{
 
   @Query("SELECT COUNT(*) FROM Member")
-  public int getMemberCount(); 
+  public int getMemberCount();
+
+  
 }
